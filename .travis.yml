@@ -21,6 +21,7 @@ script:
   - structcheck .
   - varcheck .
   - misspell -error .
+  - go test -v -cover ./...
   # recompile with glide AFTER doing code checks, as errors in dependencies in vendor/ will get caught ¯\_(ツ)_/¯
   - go get -v github.com/Masterminds/glide
   - cd $GOPATH/src/github.com/Masterminds/glide && git checkout tags/v0.12.3 && go install && cd -
